@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.david422.databindingtest.ui.login.LoginMvvm.ViewModel" />
+
+        <import type="android.view.View"/>
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:addTextChangedListener="@{viewModel.emailTextWatcher}"
+                android:hint="E-mail"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:addTextChangedListener="@{viewModel.passwordTextWatcher}"
+                android:hint="Password"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:enabled="@{viewModel.passwordCorect &amp;&amp; viewModel.loginCorect}"
+                android:onClick="@{() -> viewModel.login()}"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
