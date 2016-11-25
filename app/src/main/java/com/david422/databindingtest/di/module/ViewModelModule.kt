@@ -14,11 +14,13 @@ import dagger.Provides
 @Module
 class ViewModelModule {
 
+    @PerActivity
     @Provides
     fun provideLoginViewModel(): LoginMvvm.ViewModel {
         return LoginViewModelImpl()
     }
 
+    @PerActivity
     @Provides
     fun provideMainViewModel(): MainMvvm.ViewModel {
         return MainViewModel()

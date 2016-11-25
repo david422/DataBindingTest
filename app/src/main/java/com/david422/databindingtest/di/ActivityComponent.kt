@@ -13,6 +13,7 @@ import javax.inject.Singleton
 /**
  * Created by dpodolak on 18.11.16.
  */
+@PerActivity
 @Component(modules = arrayOf(ActivityModule::class, ViewModelModule::class))
 interface ActivityComponent {
 

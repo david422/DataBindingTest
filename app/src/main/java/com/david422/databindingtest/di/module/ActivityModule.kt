@@ -14,6 +14,7 @@ import dagger.Provides
 @Module
 class ActivityModule constructor(var activity: Activity){
 
+    @PerActivity
     @Provides
     fun providesContext(): Context{
         return activity.applicationContext;
